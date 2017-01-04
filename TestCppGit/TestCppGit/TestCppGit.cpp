@@ -9,40 +9,28 @@
 using namespace std;
 
 atomic<int> atomInt;
-//int atomInt;
 
 void ThreadOne()
 {
-	for (int i = 0; i < 10000000; ++i)
-	{
-		//atomInt++;
-		atomInt++;
-	}
+	atomInt.fetch_add(1, memory_order_release);
 }
 
 void ThreadTwo()
 {
-	for (int i = 0; i < 10000000; ++i)
-	{
-		//atomInt--;
-		atomInt--;
-	}
+	atomInt.load(memory_order_acquire);
 }
 
 int main()
 {
-	thread t1(ThreadOne);
-	thread t2(ThreadTwo);
-
-	atomic_flag flag = ATOMIC_FLAG_INIT;
+	thread t1(ThreadTwo);
+	thread t2(ThreadOne);
 
 	t1.join();
 	t2.join();
 	
-	flag.test_and_set(memory_order)
 
-	cout << atomInt << endl;
-
+	atomic_flag flag = ATOMIC_FLAG_INIT;
+	flag.test_and_set();
     return 0;
 }
 

@@ -25,5 +25,13 @@ namespace MetroUI
         {
             InitializeComponent();
         }
+
+        private void MetroWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

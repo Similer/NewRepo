@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:MetroUI"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-                      SaveWindowPosition="True"
-        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize">
+        SaveWindowPosition="True"
+        
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+
+                      
+        
+        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize" KeyDown="MetroWindow_KeyDown">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -35,6 +41,9 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Grid>
-        
+        <StackPanel>
+            <Button Content="{StaticResource appbar_cupcake}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Content="hi" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>

@@ -26,11 +26,29 @@ namespace MetroUI
             InitializeComponent();
         }
 
+
+
         private void MetroWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
             {
                 Close();
+            }
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            EzConfig.Load();
+        }
+
+        private void textBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
+
+            var result = dialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                (sender as TextBox).Text = dialog.SelectedPath;
             }
         }
     }

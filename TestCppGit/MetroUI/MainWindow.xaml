@@ -7,13 +7,13 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         SaveWindowPosition="True"
-        
-                      BorderThickness="0" 
-                      GlowBrush="Black"
-
+        BorderThickness="0" 
+        GlowBrush="Black"
+        Title="MainWindow"  HorizontalAlignment="Center" VerticalAlignment="Center" SizeToContent="WidthAndHeight"
                       
-        
-        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize" KeyDown="MetroWindow_KeyDown">
+                      KeyDown="MetroWindow_KeyDown"
+                      Loaded="MetroWindow_Loaded"
+                      >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,25 +25,22 @@
         <Controls:WindowCommands>
             <Button Content="settings" />
             <Button>
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="20"
-                   Height="20"
+                <StackPanel Orientation="Horizontal">                    
+                    <Rectangle
                    Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
                         <Rectangle.OpacityMask>
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cupcake}" />
                         </Rectangle.OpacityMask>
-                    </Rectangle>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="deploy cupcakes" />
+                    </Rectangle>               
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-    <Grid>
-        <StackPanel>
-            <Button Content="{StaticResource appbar_cupcake}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox" Width="320" Background="Aqua" MouseDoubleClick="textBox_MouseDown" IsReadOnly="True"/>      
             <Button Content="hi" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Content="{StaticResource appbar_cupcake}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Controls:MetroWindow>

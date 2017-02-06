@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="MetroUI.SvnPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:local="clr-namespace:MetroUI"
+             mc:Ignorable="d" 
+              >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox" Width="320" 
+                     Background="Aqua" MouseDoubleClick="TextBox_MouseDown" IsReadOnly="True" Margin="10, 5, 10, 5"/>
+            <Button Content="hi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+            <Button Content="{StaticResource appbar_cupcake}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

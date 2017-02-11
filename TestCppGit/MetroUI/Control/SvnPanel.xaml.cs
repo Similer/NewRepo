@@ -20,14 +20,23 @@ namespace MetroUI
     /// </summary>
     public partial class SvnPanel : UserControl
     {
-        public SvnPanel()
+        public SvnPanel(string path)
         {
             InitializeComponent();
+
+            svnLable.Content = path;
         }
 
-        private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Lable_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
 
+            var result = dialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                (sender as Label).Content = dialog.SelectedPath;
+            }
         }
+
     }
 }

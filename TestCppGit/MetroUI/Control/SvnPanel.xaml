@@ -8,11 +8,10 @@
              mc:Ignorable="d" 
               >
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox" Width="320" 
-                     Background="Aqua" MouseDoubleClick="TextBox_MouseDown" IsReadOnly="True" Margin="10, 5, 10, 5"/>
-            <Button Content="hi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
-            <Button Content="{StaticResource appbar_cupcake}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Name="innerPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="svnLable" Height="23" Width="320"
+                     Background="Aqua" MouseDoubleClick="Lable_MouseDown" Margin="10, 5, 10, 5"/>
+            <Button Content="boton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
         </StackPanel>
     </Grid>
 </UserControl>

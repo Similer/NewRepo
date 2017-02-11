@@ -6,32 +6,33 @@
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:local="clr-namespace:MetroUI"
                       mc:Ignorable="d"
-        SaveWindowPosition="True"
-        BorderThickness="0" 
-        GlowBrush="Black"
-        Title="MainWindow"  HorizontalAlignment="Center" VerticalAlignment="Center" SizeToContent="WidthAndHeight"
                       
+                      SaveWindowPosition="True"
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+                      Title="Ez"  HorizontalAlignment="Center" 
+                      VerticalAlignment="Center" 
+                      SizeToContent="WidthAndHeight"
                       KeyDown="MetroWindow_KeyDown"
                       Loaded="MetroWindow_Loaded"
                       >
-  
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="settings" />
             <Button>
-                <StackPanel Orientation="Horizontal">                    
+                <StackPanel Orientation="Horizontal">
                     <Rectangle
                    Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
                         <Rectangle.OpacityMask>
                             <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cupcake}" />
                         </Rectangle.OpacityMask>
-                    </Rectangle>               
+                    </Rectangle>
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <local:SvnPanel>
-        </local:SvnPanel>
+    <Grid Name="mainGrid" VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <StackPanel Name="svnPanelList">
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>

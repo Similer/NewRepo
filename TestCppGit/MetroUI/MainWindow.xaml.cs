@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace MetroUI
 {
@@ -10,9 +11,13 @@ namespace MetroUI
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        static public StackPanel mainPanel;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            mainPanel = svnPanelList;
         }
 
         private void MetroWindow_KeyDown(object sender, KeyEventArgs e)
@@ -25,7 +30,12 @@ namespace MetroUI
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            EzConfig.Load(ref svnPanelList);
+            EzConfig.Load();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(EzConfig.Path);
         }
     }
 }

@@ -34,7 +34,14 @@ namespace MetroUI
             var result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                (sender as Label).Content = dialog.SelectedPath;
+                Label lable = sender as Label;
+                if (lable != null)
+                {
+                    var beforeContent = lable.Content;
+                    lable.Content = dialog.SelectedPath;
+
+                    EzConfig.Save((string)beforeContent, (string)lable.Content);
+                }
             }
         }
 

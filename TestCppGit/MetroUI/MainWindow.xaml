@@ -18,7 +18,7 @@
                       >
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button Content="settings" />
+            <Button Content="settings" Click="Button_Click" />
             <Button>
                 <StackPanel Orientation="Horizontal">
                     <Rectangle

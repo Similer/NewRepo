@@ -22,10 +22,7 @@ namespace MetroUI
 
         private void MetroWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape)
-            {
-                Close();
-            }
+			Control.KeyboardShortcut.Process(sender as MainWindow, e);			
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)

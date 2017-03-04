@@ -21,13 +21,7 @@ namespace MetroUI
                 /// 설정 파일 없으면 하나 만들자
                 if (File.Exists(Path) == false)
                 {
-                    new XDocument(
-                        new XElement("EzConfig",
-                            new XElement("SvnInfo", 
-                                new XElement("Info", new XAttribute("path", ""))
-                            )
-                        )
-                    ).Save(Path);
+					NewFile();
                 }
                 else
                 {
@@ -59,16 +53,28 @@ namespace MetroUI
             if (result != null)
             {
                 result.Attribute("path").Value = dest;
-            }
-            else
+
+			}
+			else
             {
                 doc.XPathSelectElement("//SvnInfo")
                     .Add(new XElement("Info", new XAttribute("path", dest)));
-            }
 
-            doc.Save(Path);
+				MainWindow.mainPanel.Children.Add(new SvnPanel(""));
+			}
 
-            MainWindow.mainPanel.Children.Add(new SvnPanel(""));
+			doc.Save(Path);
         }
+
+		static private void NewFile()
+		{
+			new XDocument(
+						new XElement("EzConfig",
+							new XElement("SvnInfo",
+								new XElement("Info", new XAttribute("path", ""))
+							)
+						)
+					).Save(Path);
+		}
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MetroUI.Control;
 
 namespace MetroUI
 {
@@ -20,12 +21,18 @@ namespace MetroUI
     /// </summary>
     public partial class SvnPanel : UserControl
     {
+		public static int GIndexCount = 0;
+
+		public int SeletedIndex = -1;
+
         public SvnPanel(string path)
         {
             InitializeComponent();
 
-            svnLable.Content = path;
-        }
+			SeletedIndex = GIndexCount++;
+
+			svnLable.Content = path;
+		}
 
         private void Lable_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,5 +52,22 @@ namespace MetroUI
             }
         }
 
-    }
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			string path = svnLable.Content as string;
+			path.RepoBrowser();
+		}
+
+		public void Select()
+		{
+			this.Background = Brushes.Blue;
+
+		}
+
+		public void Deselect()
+		{
+			this.Background = Brushes.White;
+		}
+
+	}
 }

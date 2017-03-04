@@ -11,7 +11,7 @@
         <StackPanel Name="innerPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label x:Name="svnLable" Height="23" Width="320"
                      Background="AntiqueWhite" MouseDoubleClick="Lable_MouseDown" Margin="10, 5, 10, 5"/>
-            <Button Content="boton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+            <Button Content="boton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 5, 10, 5" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>
